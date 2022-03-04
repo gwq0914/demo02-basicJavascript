@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 900px;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+        border-spacing: 0;
+      }
+      table td {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+    </style>
+    <script>
+      var num = 10;
+      console.log(typeof num);
+      var str = "pink";
+      console.log(typeof str);
+      var flag = true;
+      console.log(typeof flag);
+      var i = undefined;
+      console.log(typeof i);
+      var timer = null;
+      console.log(typeof timer);
+
+      //把其他类型转换为字符串型
+      //1.toString()
+      console.log(num + "的数据类型是" + typeof num);
+      var str1 = num.toString();
+      console.log(str1 + "使用num.toString()的数据类型是" + typeof str1);
+      //2.String()强制转换
+      var str2 = String(num);
+      console.log(str2 + "使用String(num)的数据类型" + typeof str2);
+      //3.加号拼接字符串
+      var str3 = "3" + num;
+      console.log(num + "使用加号拼接字符串,之后的数据类型是：" + typeof str3);
+
+      //把其他类型转换为数字类型
+      //1.Number()强制转换
+      var age = prompt("请输入您的年龄：");
+      console.log("年龄age使用prompt方法保存的数据类型是：" + typeof age);
+      var ageNum = Number(age);
+      console.log(
+        "年龄age使用Number()强制转换类型之后，age的类型是：" + typeof ageNum
+      );
+      //2.parseInt()强制转换为整型
+      console.log(
+        "年龄age使用parseInt()之后，age的数据类型是：" + typeof parseInt(age)
+      );
+      var pixel = "120px";
+      console.log("'120px'使用parseInt()之后，变成了" + parseInt(pixel));
+      console.log(
+        "'rex120px'使用parseInt()之后，变成了" + parseInt("rex120px")
+      );
+      console.log(
+        "15.95使用parseInt，变成的值为：" +
+          parseInt(15.95) +
+          ",所以parseInt()是取整。"
+      );
+      //3.parseFloat()强制转换为浮点型
+      console.log(
+        "年龄age使用parseFloat()之后，age的数据类型是：" +
+          typeof parseFloat(age)
+      );
+
+      console.log(
+        "'rex120px'使用parseFloat()之后，变成了" + parseFloat("rex120px")
+      );
+      //4.使用运算符号-*/ 实现隐式转换
+      console.log(typeof ("18" - 10));
+
+      //计算年龄案例
+      var birthYear = prompt("请输入您的出生年份：");
+      // var age = 2022 - birthYear;
+      // alert("您的年龄是：" + age);
+      alert("您的年龄是：" + (2022 - birthYear)); //这里的2022-birthYear 必须使用括号
+      //简单加法器的实现
+      var num1=parseInt(prompt('请输入第一个相加的数字：'));
+      var num2=parseInt(prompt('请输入第二个相加的数字：'));
+      alert("计算结果是：" + (num1+num2));
+    </script>
+  </head>
+  <body>
+    <h3>获取检测变量的数据类型</h3>
+    <h5>typeof 可用来获取检测变量的数据类型</h5>
+    <h5>prompt 取过来的值是string</h5>
+    <h5>
+      console.log输出颜色不同，表示数据类型不同：<br />
+      黑色是字符串<br />
+      undefined 和 null 是浅灰色<br />
+      晶蓝色 是 数字型<br />
+      蓝色是布尔型
+    </h5>
+    <h3>字面量</h3>
+    <h5>
+      字面量是在源代码中一个固定值的表示法，通俗来说，就是字面量表示如何表达这个值。
+    </h5>
+    <h3>数据类型转换</h3>
+    <h5>
+      使用表单、prompt获取过来的数据默认是字符串型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型。通俗的说，就是把一种数据类型的变量转换成另外一种数据类型。
+    </h5>
+    <h3>转换为字符串类型</h3>
+    <h5>
+      <table>
+        <tr>
+          <td>方式</td>
+          <td>说明</td>
+          <td>案例</td>
+        </tr>
+        <tr>
+          <td>toString()方法</td>
+          <td>转成字符串</td>
+          <td>var num=1;alert(num.toString);</td>
+        </tr>
+        <tr>
+          <td>String()强制转换</td>
+          <td>转成字符串</td>
+          <td>var num=1;alert(String(num));</td>
+        </tr>
+        <tr>
+          <td>加号拼接字符串</td>
+          <td>和字符串拼接的结果都是字符串，这种转换方式为隐式转换</td>
+          <td>var num=1;alert(num+"我是字符串");</td>
+        </tr>
+      </table>
+    </h5>
+    <h3>转换为数字类型</h3>
+    <h5>
+      <table>
+        <tr>
+          <td>方式</td>
+          <td>说明</td>
+          <td>案例</td>
+        </tr>
+        <tr>
+          <td>parseInt(String)函数</td>
+          <td>将字符型转换为整数数值型</td>
+          <td>parseInt('78')</td>
+        </tr>
+        <tr>
+          <td>parseFloat(String)函数</td>
+          <td>将字符型转换为浮点数数值型</td>
+          <td>parseFloat('78.5')</td>
+        </tr>
+        <tr>
+          <td>Number()强制转换</td>
+          <td>将字符型转换为数值型</td>
+          <td>Number('12')</td>
+        </tr>
+        <tr>
+          <td>使用-*/实现隐式转换</td>
+          <td>利用算术运算式隐式转换为数值</td>
+          <td>'12'-'5'</td>
+        </tr>
+      </table>
+    </h5>
+    <h3>数据类型转换的案例：计算年龄</h3>
+    <h5>
+      题面：要求在页面中弹出一个输入框，客户输入出生年份后，能使用弹出框显示年龄<br />
+      解题：<br />
+      var birthYear=prompt('请输入您的出生年份：');<br />
+      alert("您的年龄是：" + (2022 - birthYear)); <br />
+    </h5>
+  </h5>
+  <h3>数据类型转换的案例：简单加法器</h3>
+  <h5>
+    题面：要求在页面中弹出两个输入框，客户输入数字后，能使用弹出框显示结果<br />
+    解题：<br />
+    var num1=parseInt(prompt('请输入第一个相加的数字：'));<br />
+    var num2=parseInt(prompt('请输入第二个相加的数字：'));<br />
+    alert("计算结果是：" + (num1+num2)); <br />
+  </h5>
+  <h3>其他类型转换为布尔型</h3>
+  <h5>
+    <table>
+      <tr>
+        <td>方式</td>
+        <td>说明</td>
+        <td>举例</td>
+      </tr>
+      <tr>
+        <td>Boolean()函数</td>
+        <td>其他类型转为布尔型</td>
+        <td>Boolean('true')</td>
+      </tr>
+    </table>
+    代表空、否定的值会被转换为false，如''、NaN、null、undefined
+    <br>
+    其余值都会被转换为true
+  </h5>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var age; //声明了一个变量age
+      age = 18; //赋值
+      console.log("年龄是" + age + "岁"); //打印
+      var myname = "Little Black"; //变量的初始化
+      console.log("名字叫" + myname); //打印
+      console.log(""); //打印
+      console.log("变量案例的展示：");
+      myname = prompt("请输入您的姓名！");
+      alert("您的姓名是" + myname);
+      console.log(myname);
+
+      //  更新变量实例
+      myname = "little black";
+      console.log(myname);
+      //声明多个变量
+      var age,
+      address = "china";
+      //交换变量,用一个临时变量的逻辑思路
+      var colorFirst='black',colorSecond='white',temp;
+      console.log('第一个颜色'+colorFirst+',第二个颜色'+colorSecond);
+      temp=colorFirst;
+      colorFirst=colorSecond;
+      colorSecond=temp;
+      console.log('第一个颜色'+colorFirst+',第二个颜色'+colorSecond);
+      
+    </script>
+  </head>
+  <body>
+    <h3>变量的知识点：</h3>
+    <h5>
+      变量：用于存放数据的容器。通过变量名获取数据，甚至数据可以修改。<br />
+      变量的本质：变量是程序在内存中申请的一块用来存放数据的空间。<br />
+      变量的使用：声明变量，赋值。 变量的初始化：var myname='Little Black';<br />
+    </h5>
+
+    <h3>变量的案例：变量的存储</h3>
+    <h5>
+      题面：<br />
+      1.弹出一个输入框，提示用户输入姓名<br />
+      2.弹出一个对话框，输出刚才输入的姓名<br />
+    </h5>
+    <h5>
+      解题：<br />
+      var yourname;<br />
+      yourname=prompt('请输入您的姓名！');<br />
+      alert('您的姓名是'+yourname);<br />
+    </h5>
+
+    <h3>变量语法扩展</h3>
+    <h5>
+      更新变量：一个变量被重新赋值后，它原有的值会被覆盖，变量值将以最后一次的赋值为准。<br />
+      同时声明多个变量：同时声明多个变量，只需要写一个var，多个变量名之间使用英文逗号隔开。
+    </h5>
+    <h5>
+      声明变量的几个特殊情况：<br />
+      变量只声明，不赋值&nbsp;-->结果是：undefined<br />
+      变量不声明，不赋值，直接使用&nbsp;-->结果是：报错<br />
+      变量不声明只赋值&nbsp;-->结果是：可以使用，不推荐使用（其实是变成了全局变量）<br />
+    </h5>
+
+    <h3>变量命名规范</h3>
+    <h5>由字母、数字、下划线、美元符号组成。<br>
+        严格区分大小写。<br />
+        不能以数字开头。<br />
+        不能是关键字、保留字。<br />
+        变量名必须有意义。<br />
+        遵守驼峰命名法。首字母小写，后面单词的首字母需要大写。<br />
+        推荐翻译网站：有道<br />
+    </h5>
+
+    <h3>变量的案例：交换变量值</h3>
+    <h5>
+      题面：<br />
+      交换变量<br />
+    </h5>
+    <h5>
+      解题：<br />
+      var colorFirst='black',colorSecond='white',temp;<br />
+      console.log('第一个颜色'+colorFirst+',第二个颜色'+colorSecond);<br />
+      temp=colorFirst;<br />
+      colorFirst=colorSecond;<br />
+      colorSecond=temp;<br />
+      console.log('第一个颜色'+colorFirst+',第二个颜色'+colorSecond);<br />
+    </h5>
+
+  </body>
+</html>

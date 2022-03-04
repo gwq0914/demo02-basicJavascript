@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   if语句案例：进入网吧
+      //   题面：弹出一个输入框，要求用户输入年龄，如果年龄大于18岁，允许进入网吧。
+      //   解题：
+      var age = prompt("请输入您的年龄：");
+      if (age >= 18) {
+        alert("我带你去网吧里偷耳机！");
+      }
+        //   if语句案例：进入网吧
+      //   题面：弹出一个输入框，要求用户输入年龄，如果年龄大于18岁，允许进入网吧。
+      //   解题：
+      var age = prompt("请输入您的年龄：");
+      if (age >= 18) {
+        alert("我带你去网吧里偷耳机！");
+      }else{
+          alert('滚，回家做作业去！');
+      }
+
+    //   if else语句案例：判断闰年
+    //   题面：1.能被4整除且不能整除100的年份为闰年
+    //         2.能被400整除的年份
+    //   解题：
+      var myYear=prompt("请输入需要判断平闰年的年份：");
+      if(myYear%400==0){
+          alert(myYear+'是闰年。');
+      }else{
+          if(myYear%4==0){
+            if(myYear%100!=0){
+                alert(myYear+'是闰年。');
+            }else{
+                alert(myYear+'是平年。');
+            }
+          }else{
+              alert(myYear+'是平年。')
+          }
+      }
+
+    //  解题：
+    if(myYear%4==0&&myYear%100!=0||myYear%400==0){
+        alert('您输入的年份是闰月。');
+    }else{
+        alert('您输入的年份是平年。');
+    }
+      
+    // 题面：>接收用户输入的成绩，根据分数输出对应的等级字母A、B、C、D、E。
+    // 解题：
+    var grade=prompt('您的成绩是：');
+      if(grade<=100 && grade>=90){
+          alert('您的分数是：'+grade+'\n您的成绩等级是：A');
+        }else if(grade<90 && grade>=80){
+            alert('您的分数是：'+grade+'\n您的成绩等级是：B');
+        }else if(grade<80 && grade>=70){
+            alert('您的分数是：'+grade+'\n您的成绩等级是：C');
+        }else if(grade<70 && grade>=60){
+            alert('您的分数是：'+grade+'\n您的成绩等级是：D');
+        }else{
+            alert('您的分数是：'+grade+'\n您的成绩等级是：E');
+        }
+
+
+        // 三元表达式案例：数字补0
+        //   题面：数字补0
+        //   解题：
+      var timer=prompt('请输入一个分钟数：（0~60）');
+      timer=timer>10?timer:'0'+timer;
+      alert(timer);
+
+      //switch语句案例：
+      //题面：用户在弹出框里面输入一个水果，如果有就弹出该水果的价格，如果没有该水果就弹出‘没有此水果’。
+      //解题：
+      var fruit=prompt("请填写需要查询价格的水果："); 
+          switch(fruit){
+                case '苹果':
+                    alert(fruit+':￥3');
+                    break;
+                case '香蕉':
+                    alert(fruit+':￥5');
+                    break;
+                default:
+                    alert(fruit+':没有此水果');
+          }
+    </script>
+  </head>
+  <body>
+    <h3>流程控制</h3>
+    <h5>
+      在一个程序执行的过程中，各条代码的执行顺序对程序的结果是有直接影响的。很多时候我们还要通过控制代码的执行顺序来是实现我们要完成的功能。
+    </h5>
+
+    <h5>
+      主要有三种结构，分别是顺序结构，分支结构，循环结构，这三种结构代表三种代码执行顺序。
+    </h5>
+
+    <h3>顺序结构</h3>
+    <h5>
+      是程序中最简单、最基本的流程控制，它没有特定的语法结构，程序会按照代码的先后顺序，以此执行，程序中大多数的代码都是这样执行的。
+    </h5>
+
+    <h3>分支结构</h3>
+    <h5>
+      是由上到下执行代码的过程中，根据不同的条件，执行不同路径代码（执行代码多选一的过程），从而得到不同的结果。
+    </h5>
+    <h5>
+    <strong>if的语法结构</strong> if(条件表达式){ 执行语句 } <br />
+    </h5>
+    <h4>if语句案例：进入网吧</h4>
+    <h5>
+      题面：<br />弹出一个输入框，要求用户输入年龄，如果年龄大于18岁，允许进入网吧。
+      <br />
+      解题：<br />
+      var age=prompt("请输入您的年龄："); if(age >= 18){
+      alert('我想带你去网吧里偷耳机！'); }
+    </h5>
+
+    <strong>if else的语法结构</strong> if(条件表达式){ 执行语句 } else{ 执行语句 }<br />
+    </h5>
+    <h4>if else语句案例：进入网吧</h4>
+    <h5>
+      题面：<br />弹出一个输入框，要求用户输入年龄，如果年龄大于18岁，允许进入网吧。
+      <br />
+      解题：<br />
+      var age=prompt("请输入您的年龄：");
+      if(age >= 18){
+      alert('我想带你去网吧里偷耳机！');
+     }else{
+         alert('滚！回家做作业去！');
+     }
+    </h5>
+
+    <h4>if else语句案例：判断闰年</h4>
+    <h5>
+      题面：<br />接收用户输入的年份，如果是闰年，否则弹出是平年
+      <br />
+      解题：<br />
+      if(myYear%4==0&&myYear%100!=0||myYear%400==0){<br />
+        alert('您输入的年份是闰月。');<br />
+    }else{<br>
+        alert('您输入的年份是平年。');<br />
+    }<br>
+    </h5>
+
+
+    <strong>if else if的语法结构</strong> if(条件表达式){ 执行语句 } else if(){ 执行语句 }else{}
+    
+
+    <h4>多分支的if判断语句案例：判断成绩级别</h4>
+    <h5>
+      题面：<br />接收用户输入的成绩，根据分数输出对应的等级字母A、B、C、D、E。
+      <br />
+      解题：<br />
+      var grade=prompt('您的成绩是：');<br />
+      if(grade<=100 && grade>=90){<br />
+          alert('您的分数是：'+grade+'\n您的成绩等级是：A');<br />
+        }else if(grade<90 && grade>=80){<br />
+            alert('您的分数是：'+grade+'\n您的成绩等级是：B');<br />
+        }else if(grade<80 && grade>=70){<br />
+            alert('您的分数是：'+grade+'\n您的成绩等级是：C');<br />
+        }else if(grade<70 && grade>=60){<br />
+            alert('您的分数是：'+grade+'\n您的成绩等级是：D');<br />
+        }else{<br />
+            alert('您的分数是：'+grade+'\n您的成绩等级是：E');<br />
+        }<br />
+    </h5>
+
+    <h4>
+    <strong>三元表达式的语法结构 &nbsp;?&nbsp;:</strong>
+    </h4>
+    <h4>三元表达式案例：数字补0</h4>
+    <h5>
+      题面：<br />
+      数字补0<br />
+      解题：<br />
+      var timer=prompt('请输入一个分钟数：（0~60）');<br />
+      timer=timer>10?timer:'0'+timer<br />
+      console.log(timer)
+    </h5>
+
+
+    <h5>
+        <strong>switch的语法结构</strong>
+        switch的语句也是多分支语句，它用于基于不同的条件来执行不同的代码。当要针对 变量 设置一系列的特定值的选项时，就可以使用switch
+        <br />
+        break;相当于跳出
+        <br />
+        switch(表达式){<br />
+            case value1:<br />
+            执行语句1;<br />
+            break;<br />
+            ...<br />
+            default:<br />
+            执行最后的语句;<br />
+        }
+        </h5>
+        <h4>switch语句案例：查询水果价格</h4>
+        <h5>
+          题面：<br />用户在弹出框里面输入一个水果，如果有就弹出该水果的价格，如果没有该水果就弹出‘没有此水果’。
+          <br />
+          解题：<br />
+          var fruit=prompt("请填写需要查询价格的水果："); <br />
+          switch(fruit){<br />
+                case '苹果':<br />
+                    alert('￥3');<br />
+                    break;<br />
+                case '香蕉':<br />
+                    alert('￥5');<br />
+                    break;<br />
+                default:<br />
+                    alert('没有此水果');<br />
+          }<br />
+        </h5>
+
+
+        <h4>switch 和 if else if 语句的区别</h4>
+        <h5>
+          1.一般情况下，他们两个语句可以相互替换<br />
+          2.switch...case语句通常处理case为比较确定值的情况，而if...else...语句更加灵活，常用于范围判断<br />
+          3.switch语句进行条件判断后执行到程序的条件语句，效率更高。而if...else语句有几种条件，就得多判断几次。<br />
+          4.当分支语句较少时，if...else语句的执行效率比switch语句高。<br />
+          5.当分支比较多时，switch语句的执行效率比较高，而且结构更清晰。<br />
+        </h5>
+  </body>
+</html>

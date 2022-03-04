@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //for循环案例：求1-100之间所有整数的累加和
+      var sum = 0;
+      for (i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      alert("1-100之间所有整数的累加和是" + sum);
+      sum = 0;
+
+      //for循环案例：求1-100之间所有数的平均值
+      for (i = 0; i <= 100; i++) {
+        sum += i;
+      }
+      average = parseFloat(sum) / parseFloat(i - 1);
+      alert("1-100之间所有数的平均值是" + average);
+      sum = 0;
+
+      //for循环案例：求1-100之间所有偶数和奇数的和
+      for (i = 2; i <= 100; i += 2) {
+        sum += i;
+      }
+      alert("1-100之间所有偶数和是" + sum);
+      sum = 0;
+
+      for (i = 1; i <= 100; i += 2) {
+        sum += i;
+      }
+      alert("1-100之间所有奇数和是" + sum);
+      sum = 0;
+
+      var even = 0,
+        odd = 0;
+      for (i = 0; i <= 100; i++) {
+        if (i % 2 == 0) {
+          even += i;
+        } else {
+          odd += i;
+        }
+      }
+      alert("1-100之间所有偶数和是" + even + ",1-100之间所有的奇数和是" + odd);
+
+      //for循环案例：求1-100之间所有能被3整除的数字的和
+      for (i = 1; i <= 100; i++) {
+        if (i % 3 == 0) {
+          sum += i;
+        }
+      }
+      alert("1-100之间所有能被3整除的数字的和是" + sum);
+      sum = 0;
+
+      // for循环案例：求学生成绩
+      // 题面：
+      // 要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩
+      // 解题：
+      var num = prompt("请输入班级人数：");
+      var grade,
+        sum = 0;
+      for (var i = 1; i <= num; i++) {
+        grade = parseFloat(prompt("请输入第" + i + "个学生的成绩："));
+        sum += grade;
+      }
+      console.log("总成绩是：" + sum + ",平均成绩是：" + sum / num);
+      //for循环案例：求1-100之间所有整数的累加和
+      var sum = 0;
+      for (i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      alert("1-100之间所有整数的累加和是" + sum);
+      sum = 0;
+
+      //for循环案例：求1-100之间所有数的平均值
+      for (i = 0; i <= 100; i++) {
+        sum += i;
+      }
+      average = parseFloat(sum) / parseFloat(i - 1);
+      alert("1-100之间所有数的平均值是" + average);
+      sum = 0;
+
+      //for循环案例：求1-100之间所有偶数和奇数的和
+      for (i = 2; i <= 100; i += 2) {
+        sum = sum + i;
+      }
+      alert("1-100之间所有偶数和是" + sum);
+      sum = 0;
+
+      for (i = 1; i <= 100; i += 2) {
+        sum += i;
+      }
+      alert("1-100之间所有奇数和是" + sum);
+      sum = 0;
+
+      var even = 0,
+        odd = 0;
+      for (i = 0; i <= 100; i++) {
+        if (i % 2 == 0) {
+          even += i;
+        } else {
+          odd += i;
+        }
+      }
+      alert("1-100之间所有偶数和是" + even + ",1-100之间所有的奇数和是" + odd);
+
+      //for循环案例：求1-100之间所有能被3整除的数字的和
+      for (i = 1; i <= 100; i++) {
+        if (i % 3 == 0) {
+          sum += i;
+        }
+      }
+      alert("1-100之间所有能被3整除的数字的和是" + sum);
+      sum = 0;
+
+      // for循环案例：求学生成绩
+      // 题面：
+      // 要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩
+      // 解题：
+      var num = prompt("请输入班级人数：");
+      var grade,
+        sum = 0;
+      for (var i = 1; i <= num; i++) {
+        grade = parseFloat(prompt("请输入第" + i + "个学生的成绩："));
+        sum += grade;
+      }
+      console.log("总成绩是：" + sum + ",平均成绩是：" + sum / num);
+
+      //for循环案例：一行打印5个星星
+      // 题面：
+      // 一行打印5个星星
+      // 解题：
+      // for (var i = 1; i <= 5; i++) {
+      //   console.log("⭐");
+      // }
+      var str = " ";
+      for (var i = 1; i <= 5; i++) {
+        str = str + "⭐";
+      }
+      console.log(str);
+      console.log("----------------");
+      //for循环案例：打印五行五列的星星
+      // 题面：
+      // 一行打印5个星星
+      str = "";
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 5; j++) {
+          str = str + "⭐";
+        }
+        str = str + "\n";
+      }
+      console.log(str);
+
+      // for循环案例：打印星星
+      // 题面：
+      // 第一行10⭐，第二行9⭐，以此类推。
+      // 解题：
+      str = "";
+      for (i = 0; i < 10; i++) {
+        for (j = 10 - i; j > 0; j--) {
+          str = str + "⭐";
+        }
+        str = str + "\n";
+      }
+      console.log(str);
+
+      // for循环案例：九九乘法表
+      // 题面：
+      // 打印出九九乘法表
+      // 解题：
+      (i = 1), (j = 1), (str = "");
+      for (i = 1; i <= 9; i++) {
+        for (j = 1; j <= i; j++) {
+          str += j + "*" + i + "=" + i * j + "  ";
+        }
+        str = str + "\n";
+      }
+      console.log(str);
+
+      // while循环案例：打印人的一生，从1岁到100岁
+      // 题面：
+      // 从1岁到100岁
+      // 解题：
+      var age = 1;
+      while (age <= 100) {
+        console.log("今年" + age + "岁了！");
+        age++;
+      }
+
+      // while循环案例：计算1~100之间所有整数的和
+      // 题面：
+      // 计算1~100之间所有整数的和
+      // 解题：
+      var num = 1,
+        sum = 0;
+      while (num <= 100) {
+        sum += num;
+        num++;
+      }
+      console.log("1-100中所有的整数和是：" + sum);
+
+      // do...while循环案例：打印人的一生，从1岁到100岁
+      // 题面：
+      // 从1岁到100岁
+      // 解题：
+      var age = 1;
+      do {
+        console.log("今年" + age + "岁了！");
+        age++;
+      } while (age <= 100);
+
+      // do...while循环案例：计算1~100之间所有整数的和
+      // 题面：
+      // 计算1~100之间所有整数的和
+      // 解题：
+      var num = 1,
+        sum = 0;
+      do {
+        sum += num;
+        num++;
+      } while (num <= 100);
+      console.log("1-100中所有的整数和是：" + sum);
+
+      // 题面：
+      //弹出一个提示框，你爱我吗？如果输入我爱你，就提示结束，否则，一直询问。
+      //解题：
+      var str = "我爱你";
+      do {
+        answer = prompt("你爱我吗？");
+      } while (answer != str);
+    </script>
+  </head>
+  <body>
+    <h5>
+      循环的目的：在实际问题中，有许多具有规律性的重复操作，因此在程序中要完成这类操作就需要重复执行某些语句
+    </h5>
+    <h5>
+      在程序中，一组被重复执行的语句被称之为循环体，能否继续重复执行，取决于循环的终止条件。由循环体及循环的终止条件组成的语句，被称之为循环语句。
+    </h5>
+    <h5>
+      for的语法结构：<br />
+      for(初始化变量;条件表达式;操作表达式)<br />{<br />
+      循环体<br />
+      }<br />
+    </h5>
+    <h5>
+      断点测试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。<br />
+      断点测试：F12-->sources-->找到需要调试的文件-->在程序的某一行设置断点
+      <br />
+      watch:监视，通过watch可以监视变量的值的变化。
+      <br />
+      F11:程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的变化。
+    </h5>
+    <h5>
+      for循环可以输出相同的代码，可以循环输出不同的代码，也可以重复相同的操作
+    </h5>
+    <h3>for循环案例：求1-100之间所有整数的累加和</h3>
+    <h5>
+      var sum = 0;
+      <br />
+      for (i = 1; i <= 100; i++) { sum += i; }
+      <br />
+      alert("1-100之间所有整数的累加和是" + sum);
+      <br />
+    </h5>
+
+    <h3>for循环案例：求1-100之间所有数的平均值</h3>
+    <h5>
+      for (i = 0; i <= 100; i++)
+      <br />
+      { sum += i; }
+      <br />average = parseFloat(sum) / parseFloat(100);
+      <br />
+      alert("1-100之间所有数的平均值是" + average);
+    </h5>
+
+    <h3>for循环案例：求1-100之间所有偶数和奇数的和</h3>
+    <h5>
+      var even=0,odd=0;<br />
+      for (i = 0;i<=100;i++){<br />
+      if(i%2==0){<br />
+      even+=i;<br />
+      }else{<br />
+      odd+=i;<br />
+      }<br />
+      }<br />
+      console.log('1-100之间所有偶数和是'+even+'1-100之间所有的奇数和是'+odd);
+      <br />
+    </h5>
+
+    <h3>for循环案例：求学生成绩</h3>
+    <h5>
+      题面：<br />
+      要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级总的成绩以及平均成绩
+      解题：<br />
+      var num=prompt('请输入班级人数：');<br />
+      var grade,sum=0; <br />
+      for(var i=;i<=num;i++){<br />
+      grade=parseFloat(prompt('请输入成绩：')); <br />
+      sum+=grade;<br />
+      }<br />
+      console.log('总成绩是：'+sum+',平均成绩是：'+sum/num);
+    </h5>
+
+    <h3>for循环案例：一行打印5个星星</h3>
+    <h5>
+      题面：<br />
+      一行打印5个星星 <br />
+      解题：<br />
+      var star='⭐'; for(var i=1;i<=5;i++){<br />
+      console.log(star)<br />
+      }<br />
+    </h5>
+
+    <h3>for循环案例：打印星星</h3>
+    <h5>
+      题面：<br />
+      第一行10⭐，第二行9⭐，以此类推。<br />
+      解题： var i=10,j,str='';<br />
+      for(i=0;i&lt;10;i++){<br />
+      for(j=10-i;j&gt;0;j--){<br />
+      str=str+'⭐'; <br />
+      } <br />
+      str=str+'\n';<br />
+      }
+    </h5>
+
+    <h5>
+      while语句可以在条件表达式而真的前提下，循环执行指定的一段代码，直到表达式不为真时结束循环。<br />
+      while 语句的语法结构如下：<br />
+      while(条件表达式){<br />
+      //循环体代码<br />
+      }<br />
+    </h5>
+
+    <h3>while循环案例：打印人的一生，从1岁到100岁</h3>
+    <h5>
+      题面：<br />
+      从1岁到100岁<br />
+      解题：<br />
+      var age = 1;<br />
+      while (age <= 100) {<br />
+      console.log("今年" + age + "岁了！");<br />
+      age++;<br />
+      }<br />
+    </h5>
+    <h3>while循环案例：计算1~100之间所有整数的和</h3>
+    <h5>
+      题面：<br />
+      计算1~100之间所有整数的和<br />
+      解题：<br />
+      var num = 1, sum = 0;<br />
+      while (num <= 100) {<br />
+      sum += num;<br />
+      num++;<br />
+      }<br />
+      console.log("1-100中所有的整数和是：" + sum);<br />
+    </h5>
+    <h5>
+      do...while,该循环会先执行一次代码块，然后对条件表达式进行判断，如果条件为真，就会重复执行循环体，否则退出循环。<br />
+      do...while 语句的语法结构如下：<br />
+      do{<br />
+      //循环体代码<br />
+      }while(条件表达式)<br />
+      do...while至少执行一次
+    </h5>
+
+    <h3>do...while循环案例：打印人的一生，从1岁到100岁</h3>
+    <h5>
+      题面：<br />
+      从1岁到100岁<br />
+      解题：<br />
+      var age = 1;<br />
+      do{<br />
+      console.log("今年" + age + "岁了！");<br />
+      age++;<br />
+      }while (age <= 100) <br />
+    </h5>
+    <h3>do...while循环案例：计算1~100之间所有整数的和</h3>
+    <h5>
+      题面：<br />
+      计算1~100之间所有整数的和<br />
+      解题：<br />
+      var num = 1, sum = 0;<br />
+      do{<br />
+      sum += num;<br />
+      num++;<br />
+      }while (num <= 100) <br />
+      console.log("1-100中所有的整数和是：" + sum);<br />
+    </h5>
+    <h3>do...while循环案例：你爱我吗？</h3>
+    <h5>
+      题面：<br />
+      弹出一个提示框，你爱我吗？如果输入我爱你，就提示结束，否则，一直询问。<br />
+      解题：<br />
+      var str='我爱你';<br />
+      do{<br />
+      answer=prompt('你爱我吗？');<br />
+      <br />
+      }while (answer!=str) <br />
+    </h5>
+  </body>
+</html>

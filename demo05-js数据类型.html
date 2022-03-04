@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    table {
+      width: 600px;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      border-spacing: 0;
+      /*去掉单元格间隙*/
+    }
+
+    table th,
+    table td {
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+  </style>
+  <script>
+    var num = 10;//整数值
+    var PI = 3.14;//小数值
+    var num1 = 010;//1.八进制 程序里面数字前面加0 表示八进制
+    console.log("八进制为010的十进制数是：" + num1);
+    var num2 = 0xa;//2.十六进制 程序前面加0x 表示十六进制
+    console.log("十六进制为0xa的十进制数是：" + num2);
+    console.log("数字型的最大值是：" + Number.MAX_VALUE);        //3.数字型的最大值
+    console.log("数字型的最小值是：" + Number.MIN_VALUE);        //3.数字型的最小值
+    console.log("数字型中的无穷大是：" + Number.MAX_VALUE * 2);//数字型的无穷大
+    console.log("数字型中的无穷小是：" + -Number.MAX_VALUE * 2);//数字型的无穷小
+    console.log('小星星' - 5);//数字型的非数字NaN，如果用加号连接，默认后面的数字为字符串
+    //isNaN() 这个方法用来判断非数字，并且返回一个值 ，如果是数字返回的是false ,如果不是数字返回的是true
+    console.log("12是不是不是数字：" + isNaN(12));
+    console.log(isNaN('小黑'));
+    alert('酷热难耐，火辣的太阳地下，我挺拔的身姿，成为了最为独特的风景。\n我审视四周，这里，是我的舞台，我是天地间的王者。\n这一刻，我豪气冲天，终于大喊一声：“收破烂了~”');
+    var str = 'man';
+    console.log('man的字数' + str.length);
+    str = '酷热难耐';
+    console.log('"酷热难耐"的字数：' + str.length);
+    console.log('我是一个' + '程序媛' + '!');
+    console.log('程序媛' + 666);
+    console.log('12' + 12);
+    console.log(12 + 12);
+    //显示年龄的案例
+    var age = prompt('请输入您的年龄：');
+    alert('您今年' + age + '岁啦！');
+  </script>
+</head>
+
+<body>
+  <h2>数据类型,是什么，为什么必需</h2>
+  <h5>
+    在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，充分利用存储空间，于是定义了不同的数据类型。<br />
+    数据类型就是数据的类别。<br />
+  </h5>
+  <h3>变量的数据类型</h3>
+  <h5>
+    javascript是一种<strong>弱类型</strong>或者说<strong>动态语言</strong>。<br />
+    这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。赋值时才知道是什么数据类型<br />
+    js是动态语言 变量的数据类型是可以变化的。<br />
+  </h5>
+  <h3>简单数据类型</h3>
+  <h5>
+    <table>
+      <tr>
+        <td>简单数据类型</td>
+        <td>说明</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>数字型，包含整型值和浮点型值，如21、0.21</td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>布尔值类型，如true、false,等价于1和0</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>字符串类型，如“张三”,在js里面，字符串都带引号</td>
+      </tr>
+      <tr>
+        <td>Undefined</td>
+        <td>var a;声明了变量a但是没有给值，所以此时类型为undefined</td>
+      </tr>
+      <tr>
+        <td>Null</td>
+        <td>var a=null;声明了变量a为空值。</td>
+      </tr>
+    </table>
+  </h5>
+  <h3>数字型Number</h3>
+  <h5>
+    数字类型既可以用来保存整数值，也可以保存小数值。<br>
+  </h5>
+  <h5>
+    数字型中的特殊数字：
+    <table>
+      <tr>
+        <th>数字型</th>
+        <th>说明或注释</th>
+        <th>举例或公式</th>
+      </tr>
+      <tr>
+        <td>整数值</td>
+        <td>整数</td>
+        <td>var num=10;</td>
+      </tr>
+      <tr>
+        <td>小数值</td>
+        <td>小数</td>
+        <td>var PI=3.14;</td>
+      </tr>
+      <tr>
+        <td>八进制</td>
+        <td>程序里面数字前面加0 表示八进制</td>
+        <td>var num1=010;</td>
+      </tr>
+      <tr>
+        <td>十六进制</td>
+        <td>程序前面加0x 表示十六进制</td>
+        <td>var num2=0xa;</td>
+      </tr>
+      <tr>
+        <td>数字型的最大值</td>
+        <td>1.7976931348623157e+308</td>
+        <td>Number.MAX_VALUE</td>
+      </tr>
+      <td>数字型的最小值</td>
+      <td>5e-324</td>
+      <td>Number.MIN_VALUE</td>
+      </tr>
+      <tr>
+        <td>数字型的无穷大</td>
+        <td>Infinity</td>
+        <td>Number.MAX_VALUE*2</td>
+      </tr>
+      <tr>
+        <td>数字型的无穷小</td>
+        <td>-Infinity</td>
+        <td>-Number.MAX_VALUE*2</td>
+      </tr>
+      <tr>
+        <td>非数字NaN</td>
+        <td>如果用加号连接，默认后面的数字为字符</td>
+        <td>'小星星'-5</td>
+      </tr>
+    </table>
+  </h5>
+  <h3>字符串型String</h3>
+  <h5>字符串型可以是引号中的任意文本，其语法为双引号和单引号。<br>
+    js更推荐使用单引号<br>
+    字符串转义符
+    <table>
+      <tr>
+        <th>转义符</th>
+        <th>解释说明</th>
+      </tr>
+      <tr>
+        <td>\n</td>
+        <td>换行符号，n是newline的意思</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>斜杠\</td>
+      </tr>
+      <tr>
+        <td>\'</td>
+        <td>单引号</td>
+      </tr>
+      <tr>
+        <td>\"</td>
+        <td>双引号</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>tab缩进</td>
+      </tr>
+      <tr>
+        <td>\b</td>
+        <td>空格，b是blank的意思</td>
+      </tr>
+    </table>
+    <br>
+  </h5>
+  <h4>字符串的案例：弹出网页警示框</h4>
+  <h5>
+    题面：<br />
+    弹出网页警示框<br />
+    解题：<br />
+    alert('酷热难耐，火辣的太阳地下，我挺拔的身姿，成为了最为独特的风景。我审视四周，这里，是我的舞台，我是天地间的王者。\n这一刻，我豪气冲天，终于大喊一声：“收破烂了~”');
+  </h5>
+  <h4>检测获取字符串的长度:变量名.length</h4>
+  <h4>字符串的拼接:加号 </h4>
+  <h5>
+    字符串拼接的口诀：数值相加，字符相连吧<br>
+    注意：变量不要写到字符串里面，是通过和字符串相连的方式实现的。
+    console.log('12'+12);<br>
+    console.log(12+12);
+  </h5>
+  <h4>字符串的案例：显示年龄的案例</h4>
+  <h5>
+    题面：<br />
+    弹出一个输入框，需要用户输入年龄，之后弹出一个警示框显示"您今年**岁了！"<br />
+    解题：<br />
+    var age=prompt('请输入您的年龄：');
+    alert('您今年'+age+'岁啦！');
+  </h5>
+  <h3>布尔型Boolean</h3>
+  <h5>布尔类型有两个值：true和false，其中true表示真（1）（对），false表示假（0）（错）。</h5>
+
+  <h3>Undefined和Null</h3>
+  <h5>一个声明后没有被赋值的变量会有一个默认值undefined</h5>
+  <h5>
+    var num;<br />
+    console.log(num+1);//NaN<br />
+    console.log(num+"是个数字！");//字符串型String<br />
+    var kong=null;<br />
+    console.log(kong+1);//1<br />
+    console.log(kong+"是空值，计算时为0");//字符串型String<br />
+  </h5>
+</body>
+</html>

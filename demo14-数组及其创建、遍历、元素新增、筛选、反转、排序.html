@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   利用new创建数组：
+      var num_arr = new Array();
+      //利用数组字面量创建数组：
+      var colour = ["red", "green", "blue"];
+      //获取数组元素  (访问)
+      console.log(colour);
+      console.log(colour[0]);
+      //没有数组元素，输出undefined
+      var week = new Array();
+      week = [
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+        "星期日",
+      ];
+      console.log(week);
+      //遍历：把数组中的每个元素从头到尾都访问一次
+      for (var i = 0; i < 3; i++) {
+        console.log(colour[i]);
+      }
+      //数组的长度
+      console.log(colour.length);
+      //遍历和数组长度结合
+      for (var i = 0; i < colour.length; i++) {
+        console.log(colour[i]);
+      }
+      //题面：求数组[2,6,1,7,4]里面所有元素的和以及平均值
+      //题解：
+      var num = [2, 6, 1, 7, 4],
+        sum = 0,
+        average;
+      for (var i = 0; i < num.length; i++) {
+        sum += num[i];
+      }
+      console.log("数组[2,6,1,7,4]的总数和是" + sum);
+      average = sum / num.length;
+      console.log("数组[2,6,1,7,4]的平均值是" + average);
+
+      //题面：求数组[2,6,1,7,4]里面所有元素的和以及平均值
+      //题解：
+      var num = [2, 6, 1, 77, 52, 25, 7],
+        max = 0;
+      for (var i = 0; i < num.length; i++) {
+        if (num[i] > num[i + 1]) {
+          max = num[i];
+          num[i] = num[i + 1];
+          num[i + 1] = max;
+        }
+      }
+      console.log("数组[2,6,1,77,52,25,7]的最大值是" + max);
+      //题解：
+      for (var i = 0; i < num.length; i++) {
+        if (num[i] > max) {
+          max = num[i];
+        }
+      }
+      console.log("数组[2,6,1,77,52,25,7]的最大值是" + max);
+
+      //题面：
+      //将数组['red','green','blue','pink']转换为字符串，并且用|或其他符号分割。
+      //解题：
+      var color = ["red", "green", "blue", "pink", "black", "white"];
+      var str = "";
+      var sep = "|";
+      for (var i = 0; i < color.length; i++) {
+        str += color[i].toString();
+        if (i == 5) {
+          continue;
+        }
+        str += sep;
+      }
+      console.log(str);
+
+      //新增数组元素 修改长度length
+      color.length = 5; //把我们数组长度修改为5
+      console.log(color); //扩容的数组元素为：undefined
+
+      //新增数组长度  //修改索引号 追加数组元素
+      color[3] = "orange";
+      console.log(color);
+      //不要直接给数组赋值，数组元素将被覆盖
+
+      //新建一个数组，里面存放10个数组整数1~10
+      var numArr_1 = new Array();
+      numArr_1.length = 10;
+      for (var i = 0; i < numArr_1.length; i++) {
+        numArr_1[i] = i + 1;
+      }
+      console.log(numArr_1);
+
+      //筛选数组案例：
+      //将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新数组
+      var numArr_2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var numArr_3 = [],
+        j = 0;
+      for (var i = 0; i < numArr_2.length; i++) {
+        if (numArr_2[i] >= 10) {
+          numArr_3[j] = numArr_2[i];
+          j++;
+        }
+      }
+      console.log(numArr_3);
+
+      var numArr_2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var numArr_3 = [];
+      for (var i = 0; i < numArr_2.length; i++) {
+        if (numArr_2[i] >= 10) {
+          numArr_3[numArr_3.length] = numArr_2[i];
+          //新数组中每最后一个元素的索引号 是 新数组上一次元素的长度
+          //新数组的长度 是 下一次赋值新数组元素的索引号
+        }
+      }
+      console.log(numArr_3);
+
+      //删除指定的数组元素的案例：
+      //题面：要求将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组
+      // 解题：
+      var numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+
+      for (var i = 0; i < numArr_4.length; i++) {
+        if (numArr_4[i] == 0) {
+          for (var j = i; j < numArr_4.length; j++) {
+            numArr_4[j] = numArr_4[j + 1];
+          }
+          numArr_4.length--;
+        }
+      }
+      console.log(
+        "[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组是：" +
+          numArr_4
+      );
+
+      //解题：
+      numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var numArr_5 = [];
+      for (var i = 0; i < numArr_4.length; i++) {
+        if (numArr_4[i] != 0) {
+          numArr_5[numArr_5.length] = numArr_4[i];
+        }
+      }
+      console.log(
+        "[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组是：" +
+          numArr_5
+      );
+
+      //翻转数组
+      //题面 ：要求将数组color = ["red", "green", "blue", "orange", "black"];的内容反过来存放，
+      //输出color = ["black", "orange", "blue", "green", "red"];
+      //解题
+      console.log("color:" + color);
+      var numArr_6 = [];
+      for (var i = color.length - 1; i >= 0; i--) {
+        numArr_6[numArr_6.length] = color[i];
+      }
+      console.log("color的翻转数组：" + numArr_6);
+
+      //数组排序，冒泡排序
+      //冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示（从小到大或者从大到小）
+    </script>
+  </head>
+  <body>
+    <h5>
+      数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素，数组是一种将一组数据存储在单个变量名下的优雅方式。数组可以把一组相关的数据一起存放，并提供方便的访问（获取）方式。
+    </h5>
+    <h5>
+      js中创建数组有两种方式：<br />
+      利用new创建数组；<br />
+      1.利用数组字面量创建数组；<br />
+      var 数组名 = [];<br />
+      2.使用数组字面量方式创建带初始值的数组<br />
+      var 数组名 = ['red','green','blue'];
+    </h5>
+    <h5>数组的索引 ：用来访问数组元素的序号，从0开始。</h5>
+    <h5>没有数组元素，输出undefined</h5>
+    <h3>访问数组元素案例：一个星期的数组</h3>
+    <h5>
+      var week=new Array(); <br />
+      week = ['星期一'，'星期二','星期三','星期四','星期五','星期六','星期日'];
+      console.log(week);
+    </h5>
+    <h5>
+      遍历数组<br />
+      遍历：把数组中的每个元素从头到尾都访问一次<br />
+      数组的长度：数组名.length，可以访问数组元素的数量，动态监测数组元素的个数<br />
+    </h5>
+    <h3>遍历数组案例：数组求和及平均值</h3>
+    <h5>
+      题面：求数组[2,6,1,7,4]里面所有元素的和以及平均值<br />
+      题解：<br />
+      var num=[2,6,1,7,4],sum=0; <br />
+      for (var i = 0; i < num.length; i++){ <br />
+      sum +=num[i]; <br />
+      }<br />
+      console.log("数组[2,6,1,7,4]的总数和是" + sum);<br />
+      average = sum / num.length;<br />
+      console.log("数组[2,6,1,7,4]的平均值是" + average);<br />
+    </h5>
+    <h5>
+      题面：求数组[2,6,1,7,4]里面所有元素的和以及平均值<br />
+      题解：<br />
+      var num=[2,6,1,77,52,25,7],max; <br />
+      for (var i = 0; i < num.length; i++){ <br />
+      if(num[i]>num[i+1]){<br />
+      max = num[i];<br />
+      num[i] = num[i + 1];<br />
+      num[i + 1] = max;<br />
+      }<br />
+      }<br />
+      console.log("数组[2,6,1,77,52,25,7]的最大值是" + max);<br />
+    </h5>
+
+    <h3>遍历数组案例：数组转换为分割字符串</h3>
+    <h5>
+      题面：<br />
+      将数组['red','green','blue','pink']转换为字符串，并且用|或其他符号分割。<br />
+      解题：<br />
+      var color = ["red", "green", "blue", "pink", "black", "white"];<br />
+      var str = "";<br />
+      for (var i = 0; i &lt; color.length; i++) {<br />
+      str += color[i].toString();<br />
+      if (i == 5) {<br />
+      continue;<br />
+      }<br />
+      str += "|";<br />
+      }<br />
+      console.log(str);
+    </h5>
+    <h5>数组中新增元素，可以通过修改length长度，索引号新增加数组元素</h5>
+    <h3>新增数组案例：</h3>
+    <h5>
+      题面：<br />
+      新建一个数组，里面存放10个数组整数1~10 <br />
+      解题：<br />
+      var numArr_1 = new Array();<br />
+      numArr_1.length = 10;<br />
+      for (var i = 0; i &lt; numArr_1.length; i++) {<br />
+      numArr_1[i] = i + 1;<br />
+      };<br />
+      console.log(numArr_1);<br />
+    </h5>
+
+    <h3>筛选数组案例：</h3>
+    <h5>
+      题面：<br />
+      将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新数组<br />
+      题解：<br />
+      var numArr_2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+      var numArr_3 = [],<br />
+      j = 0;<br />
+      for (var i = 0; i &lt; numArr_2.length; i++) {<br />
+      if (numArr_2[i] >= 10) {<br />
+      numArr_3[j] = numArr_2[i];<br />
+      j++;<br />
+      }<br />
+      }<br />
+      console.log(numArr_3);<br />
+      <br />
+      <br />
+      var numArr_2 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+      var numArr_3 = [];<br />
+      for (var i = 0; i < numArr_2.length; i++) {<br />
+      if (numArr_2[i] >= 10) {<br />
+      numArr_3[numArr_3.length] = numArr_2[i];<br />
+      //新数组中每最后一个元素的索引号 是 新数组上一次元素的长度<br />
+      //新数组的长度 是 下一次赋值新数组元素的索引号<br />
+      }<br />
+      }<br />
+      console.log(numArr_3);<br />
+    </h5>
+
+    <h3>筛选数组的案例：删除0元素</h3>
+    <h5>
+      题面：<br />
+      要求将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组<br />
+      var numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+      for (var i = 0; i &lt; numArr_4.length; i++) {<br />
+      if (numArr_4[i] == 0) {<br />
+      for (var j = i; j &lt; numArr_4.length; j++) {<br />
+      numArr_4[j] = numArr_4[j + 1];<br />
+      }<br />
+      numArr_4.length--;<br />
+      }<br />
+      }<br />
+      console.log(
+      "[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组是：" +
+      numArr_4 );<br />
+      <br />
+      numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];<br />
+      var numArr_5 = [];<br />
+      for (var i = 0; i < numArr_4.length; i++) {<br />
+      if (numArr_4[i] != 0) {<br />
+      numArr_5[numArr_5.length] = numArr_4[i];<br />
+      }<br />
+      }<br />
+      console.log(
+      "[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不包含0的新数组是：" +
+      numArr_5 );<br />
+    </h5>
+
+    <h3>筛选数组的案例：翻转数组</h3>
+    <h5>
+      题面：要求将数组color = ["red", "green", "blue", "orange",
+      "black"];的内容反过来存放，输出color = ["black", "orange", "blue",
+      "green", "red"];<br />
+      解题：<br />
+      var numArr_6 = [];<br />
+      for (var i = color.length - 1; i >= 0; i--) {<br />
+      numArr_6[numArr_6.length] = color[i];<br />
+      }<br />
+      console.log("color的翻转数组：" + numArr_6);<br />
+    </h5>
+  </body>
+</html>

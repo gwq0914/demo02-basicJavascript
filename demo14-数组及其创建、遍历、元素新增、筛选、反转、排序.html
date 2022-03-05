@@ -167,6 +167,20 @@
 
       //数组排序，冒泡排序
       //冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示（从小到大或者从大到小）
+      //数组排序案例：
+      //题面：将numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];按照从小到大的排列顺序
+      //解题：
+      var temp;
+      for (var i = 0; i <= numArr_4.length - 1; i++) {
+        for (var j = 0; j <= numArr_4.length - i - 1; j++) {
+          if (numArr_4[j] > numArr_4[j + 1]) {
+            temp = numArr_4[j];
+            numArr_4[j] = numArr_4[j + 1];
+            numArr_4[j + 1] = temp;
+          }
+        }
+      }
+      console.log("[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]排序之后：" + numArr_4);
     </script>
   </head>
   <body>
@@ -319,6 +333,26 @@
       numArr_6[numArr_6.length] = color[i];<br />
       }<br />
       console.log("color的翻转数组：" + numArr_6);<br />
+    </h5>
+
+    <h3>数组排序，冒泡排序及其案例</h3>
+    <h5>
+      冒泡排序：是一种算法，把一系列的数据按照一定的顺序进行排列显示（从小到大或者从大到小）<br />
+      数组排序案例：<br />
+      题面：<br />
+      将numArr_4 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];按照从小到大的排列顺序<br />
+      解题：<br />
+      var temp;<br />
+      for (var i = 0; i <= numArr_4.length - 1; i++) {<br />
+      for (var j = 0; j <= numArr_4.length - i - 1; j++) {<br />
+      if (numArr_4[j] > numArr_4[j + 1]) {<br />
+      temp = numArr_4[j];<br />
+      numArr_4[j] = numArr_4[j + 1];<br />
+      numArr_4[j + 1] = temp;<br />
+      }<br />
+      }<br />
+      }<br />
+      console.log("[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]排序之后：" + numArr_4);<br />
     </h5>
   </body>
 </html>

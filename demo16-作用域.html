@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //js的作用域（es6）之前：全局作用域 局部作用域
+      //全局作用域：整个script标签 或者 一个单独的js文件
+      //局部作用域： 在函数内部就是局部作用域
+      //注意：如果在函数内部 没有声明直接赋值的变量 也是全局变量
+      //函数的形参 局部变量
+      //从执行效率来看，全局变量只有浏览器不安比的时候才会销毁，比较占内存。局部变量，当我们程序执行完毕就会被销毁，更节省内存空间。
+      //js没有块级作用域，js在es6的时候新增的作用域
+      //块级作用域 {}
+      //作用域链：内部函数访问外部函数的变量，采取的是链式查找的方式来决定值，这种结构被称为作用域链
+      function f1() {
+        var num = 123;
+        function f2() {
+          var num = 0;
+          console.log(num);
+        }
+        f2();
+      }
+      var num = 456;
+      f1();
+    </script>
+  </head>
+  <body>
+    <h5>
+      作用域概述：通常来说，一段程序代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。作用域的使用提高了程序逻辑的局限性，增强了程序的可靠性，减少了名字冲突。
+    </h5>
+    <h5>
+      只要是代码，就至少有一个作用域<br />
+      卸载函数内部的局部作用域<br />
+      如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域<br />
+      根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就称作作用域链<br />
+    </h5>
+    <h5>作用域链的案例：</h5>
+    function f1(){<br />
+    var num = 123;<br />
+    function f2(){<br />
+    console.log(num);<br />
+    }<br />
+    f2();<br />
+    }<br />
+    var num = 456;<br />
+    f1();
+  </body>
+</html>

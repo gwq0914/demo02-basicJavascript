@@ -84,6 +84,18 @@
       for (var k in obj1) {
         console.log(k + ":" + obj1[k]);
       }
+      //案例：创建一个电脑对象，属性有：颜色，重量，品牌，型号，方法有：看电影，听音乐，打游戏，和敲代码
+      var computer = {};
+      computer.color = "black";
+      computer.weight = 5.4;
+      computer.brand = "ASUS";
+      computer.model = "天选";
+      computer.fun = function () {
+        console.log("看电影，听音乐，打游戏，敲代码");
+      };
+
+      //案例：创建一个按钮对象，该对象中需要包含宽，高，背景颜色和点击行为。
+      //创建一个车的对象，该对象有重量，颜色，牌子，可以载人，拉货和耕田。
     </script>
   </head>
   <body>
@@ -131,6 +143,13 @@
       3.执行构造函数里面的代码，给这个空对象添加属性和方法<br />
       4.返回这个对象，所以不用return<br />
     </h5>
-    <h5>遍历对象</h5>
+    <h5>
+      遍历对象
+      <br />
+      for (k in obj){<br />
+      k:属性名<br />
+      obj[k]:属性值<br />
+      }<br />
+    </h5>
   </body>
 </html>

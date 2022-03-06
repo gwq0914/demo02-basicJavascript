@@ -39,19 +39,108 @@
         for (var i = start; i <= ending; i++) {
           sum += i;
         }
-        console.log(start + "到" + ending + "的累加和是" + sum);
+        return start + "到" + ending + "的累加和是" + sum;
       }
-      sumNum(1, 100);
+      console.log(sumNum(1, 100));
+      var demoNum = [5, 2, 99, 101, 67, 77];
+      //函数使用的案例：利用函数求任意一个数组中的最大值
+      //求数组[5,2,99,101,67,77]中的最大值
+      function maxNum(num) {
+        var max = 0;
+        for (var i = 0; i <= num.length; i++) {
+          if (num[i] > max) {
+            max = num[i];
+          }
+        }
+        return num + "数组的最大值是：" + max;
+      }
+      max = maxNum(demoNum);
+      console.log(max);
+
+      //arguments的使用:利用数组求任意个数的最大值
+      function maxArg() {
+        var max = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          if (arguments[i] > max) {
+            max = arguments[i];
+          }
+        }
+        return max;
+      }
+      console.log("最大值是" + maxArg(demoNum));
+
+      //函数案例：利用函数的封装方式，反转任意一个函数
+      function reverseArg() {
+        var num = [];
+        for (var i = arguments.length - 1; i >= 0; i--) {
+          num[num.length] = arguments[i];
+        }
+        return num;
+      }
+      console.log("翻转排序：" + reverseArg(demoNum));
+
+      //利用函数封装方式，对数组进行排序
+      //1 2 3 4 5
+      function sortArg(arr) {
+        var temp;
+        for (var i = 0; i < arr.length - 1; i++) {
+          for (var j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+      console.log("对数组进行排序:" + sortArg(demoNum));
+
+      var myYear = prompt("请输入判断是否是闰年的年份：");
+      //函数案例：要求输入一个年份，判断是否是闰年（闰年：能被4整除并且不能被100整除，或者能被400整除）
+      function isLeapYear(myYear) {
+        if ((myYear % 4 == 0 && myYear % 100 != 0) || myYear % 400 == 0) {
+          flag = 1;
+          alert(myYear + "年是闰年");
+        } else {
+          flag = 0;
+          alert(myYear + "年是平年");
+        }
+        console.log("已判断出" + myYear + "年是否为闰年：" + Boolean(flag));
+        return flag;
+      }
+
+      //函数案例：函数可以相互调用
+      //用户输入年份，输出当前年份2月份的天数
+      function daysInFebruary(years) {
+        var days;
+        if (isLeapYear(years)) {
+          alert("二月份29天");
+          days = 29;
+        } else {
+          alert("二月份28天");
+          days = 28;
+        }
+        console.log("已判断出" + years + "年二月份的天数：" + days);
+      }
+      console.log(daysInFebruary(myYear));
     </script>
   </head>
   <body>
     <h5>
       函数就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。
-      <br />
-      函数在使用时分为两步：声明函数和调用函数。
+      <br /><br />
+      函数在使用时分为两步：声明函数和调用函数。<br />
+      函数的使用：<br />
+      1.声明函数<br />
+      function 函数名(){<br />
+      函数体<br />
+      }<br />
+      2.调用函数<br />
+      函数名（）；<br />
       <br />
       在声明函数时，可以在函数名称后面的小括号中添加一些参数，这些参数被称为形参，而在调用该函数时，同样也需要传递相应的参数，这些参数被称为实参。
-      <br />
+      <br /><br />
       <table>
         <tr>
           <td>参数</td>
@@ -67,7 +156,39 @@
         </tr>
       </table>
       <br />
-      参数的作用：在函数内部耨写值不能固定，我们可以参数在调用函数时传递不同的值进去。
+      参数的作用：在函数内部耨写值不能固定，我们可以参数在调用函数时传递不同的值进去。<br /><br />
+      函数形参实参个数匹配问题<br />
+      1.如果实参的个数和形参的个数一致，则正常输出结果<br />
+      2.如果实参的个数多余形参的个数，会取到形参的个数<br />
+      3.如果实参的个数小于形参的个数，没有实参的形参，为undefined，如果数字和undefined运算结果为NaN<br />
+      <br />
+      函数内部不应该有输出语句
+      <br />
+      函数返回值用return
+      <br />
+      我们经常用一个变量来接受函数的返回结果
+      <br />
+      return 如果有多个函数返回值，以最后一个值为准
+      <br />
+      return 除了能返回结果之外，还有终止函数的作用
+      <br />
+      如果函数没有return，则返回值为undefined
+    </h5>
+    <h3>arguements的使用</h3>
+    <h5>
+      当我们不确定有多少个参数传递的时候，可以用argument来获取。在js中，arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个arguments对象，arguments对象中存储了传递的所有实参。
+      <br />
+      arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：<br />
+      具有length属性,按照索引方式存储数据，不具有数组的push,pop等方法
+      <br />
+      数组不能代替argument
+    </h5>
+    <h5>函数可以调用另外一个函数</h5>
+    <h5>
+      函数表达式的两种命名方式
+      <br />
+      function 函数名(){}<br />
+      var fun = function(){}<br />
     </h5>
   </body>
 </html>

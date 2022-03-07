@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log(Math.PI);
+      console.log(Math.max(-1, -99, -3, "pink"));
+      console.log(Math.max());
+      //利用对象封装自己的数学对象，里面有PI最大值最小值
+      var myMath = {
+        PI: 3.141592653,
+        max: function () {
+          var max = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+              max = arguments[i];
+            }
+          }
+          return max;
+        },
+        min: function () {
+          var min = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (arguments[i] > min) {
+              min = arguments[i];
+            }
+          }
+          return min;
+        },
+      };
+      //1.绝对值方法
+      console.log(Math.abs("-1")); //1
+      console.log(Math.abs("pink")); //NaN
+      //2.三个取整方法
+      //Math.floor() //向下取整
+      console.log(Math.floor(1.1)); //1
+      console.log(Math.floor(1.9)); //1
+      //Math.ceil() //向上取整
+      console.log(Math.ceil(1.1)); //2
+      console.log(Math.ceil(1.9)); //2
+      console.log(Math.ceil(-1.5)); //-1
+      //Math.round() //四舍五入
+      console.log(Math.round(1.1)); //1
+      console.log(Math.round(1.5)); //2
+      console.log(Math.round(1.9)); //2
+      console.log(Math.round(-1.5)); // -1,.5是往大了取
+
+      //3.Math对象随机数方法 random() 返回一个[0,1)的随机小数
+      //案例：得到两个数之间的随机整数，并且包含两个整数
+
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      //console.log(getRandom(1, 10));
+
+      //案例：随机点名
+      var arr = ["张三", "张三丰", "张三疯子"];
+      console.log(arr[getRandom(0, arr.length - 1)]);
+      //案例：猜数字游戏
+      //题面：程序随机生成1~10之间的数字，并让用户输入一个数字，
+      //1.如果大于该数字，就提示，数字大了
+      //2.如果小于该数字，就提示数字小了，继续猜；
+      //3.如果等于该数字，就提示猜对了，结束程序
+      {
+        function game() {
+          var flag = 0,
+            numDemo,
+            str,
+            num;
+          numDemo = getRandom(1, 10);
+          do {
+            num = prompt("请您随意输入一个1~10的整数：");
+            if (num > numDemo) {
+              str = "数字大了，继续猜。";
+            } else if (num < numDemo) {
+              str = "数字小了，继续猜。";
+            } else {
+              flag = 1;
+              str = "猜对了，结束程序。";
+            }
+            alert(str);
+          } while (flag == 0);
+        }
+        game();
+      }
+      //第二种方法
+      {
+        var random = getRandom(1, 10);
+        while (true) {
+          var num = prompt("猜个1~10之间的数：");
+          if (num > random) {
+            alert("你猜大了");
+          } else if (num < random) {
+            alert("你猜小了");
+          } else {
+            alert("猜对了，程序结束");
+            break;
+          }
+        }
+      }
+      //要求用户猜 1~50 之间的一个数字 但只有10次猜的机会
+      {
+        var num = prompt("输个数，你看看猜到猜不到！");
+        var random = getRandom(1, 50),
+          i;
+        for (i = 0; i < 9; i++) {
+          if (num > random) {
+            alert("你猜大了");
+          } else if (num < random) {
+            alert("你猜小了");
+          } else {
+            alert("猜对了，程序结束");
+            break;
+          }
+          if (i == 9) {
+            alert("猜了10次，次数已用完");
+          } else {
+            var num = prompt("输个数，你看看猜到猜不到！");
+          }
+        }
+      }
+      //第二种方法
+      {
+        function guessNum(fre) {
+          var num,
+            numDemo = getRandom(1, 50),
+            str,
+            i = 0;
+          do {
+            num = prompt("猜个数字，1~50！");
+            i++;
+            if (num > numDemo) {
+              alert("你猜大了");
+            } else if (num < numDemo) {
+              alert("你猜小了");
+            } else {
+              alert("猜对了，程序结束");
+              break;
+            }
+            console.log(i + ":" + num);
+          } while (i <= fre);
+        }
+      }
+      guessNum(10);
+    </script>
+  </head>
+  <body>
+    <h5>js中的对象分为三种：自定义对象、内置对象、浏览器对象</h5>
+    <h5>
+      自定义对象，和内置对象属于ECMAScript;第三个浏览器对象属于我们js、API讲解
+    </h5>
+    <h5>
+      内置对象就是指js语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是最基本而必要的功能（属性和方法）
+    </h5>
+    <h5>js提供了多个内置对象：Math、Date、Array、String</h5>
+    <h5>
+      查文档怎们查：<br />
+      MDN:developer.mozilla.org<br />
+    </h5>
+    <h5>Math对象，不是一个构造函数，所以不用new</h5>
+  </body>
+</html>

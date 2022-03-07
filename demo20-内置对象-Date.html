@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //是一个构造函数
+      var arr = Array();
+      var obj = Object();
+      //1.使用Date
+      //如果没有参数，返回当前系统的当前时间
+      var date = new Date();
+      console.log(date);
+      //2.参数能用的写法数字型 2022,10,01 字符串型 2022-10-01 8:8:8
+      var date1 = new Date(2022, 10, 1);
+      console.log(date1); //返回的是11月 不是 10月
+      var date2 = new Date("2022-10-01 8:8:8");
+      console.log(date2);
+
+      //日期内置函数案例：日期格式化
+      //我们想要2022-10-01 08:08:09
+      function fd() {
+        var myYear = date.getFullYear();
+        var myMonth =
+          date.getMonth() + 1 > 10
+            ? date.getMonth() + 1
+            : "0" + (date.getMonth() + 1);
+        var myDate =
+          date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
+        var myHour =
+          date.getHours() > 10 ? date.getHours() : "0" + date.getHours();
+        var myMinute =
+          date.getMinutes() > 10 ? date.getMinutes() : "0" + date.getMinutes();
+        var mySecond =
+          date.getSeconds() > 10 ? date.getSeconds() : "0" + date.getSeconds();
+        var myDayArr = [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        var myDay = myDayArr[date.getDay()];
+        return;
+        "现在是：" +
+          myYear +
+          "年" +
+          myMonth +
+          "月" +
+          myDate +
+          "日" +
+          " " +
+          myHour +
+          ":" +
+          myMinute +
+          ":" +
+          mySecond +
+          " " +
+          myDay;
+      }
+      //console.log(fd());
+      /*
+      //获取日期的总的毫秒数  距离1970-1-1  时间戳
+      //1.通过valueOf() getTime()
+      var date = new Date();
+      console.log(date.valueOf());
+      console.log(date.getTime());
+      //2.简单的写法
+      var date1 = +new Date();
+      console.log(date1);
+      //3.H5新增 获得总的毫秒数
+      console.log(Date.now());
+*/
+      //案例：倒计时案例
+      function countDown(time) {
+        nowTime = +new Date();
+        inputTime = +new Date(time);
+        var timer = (inputTime - nowTime) / 1000;
+        var myDay =
+          parseInt(timer / 24 / 60 / 60) > 10
+            ? parseInt(timer / 24 / 60 / 60)
+            : "0" + parseInt(timer / 24 / 60 / 60);
+        var myHour =
+          parseInt((timer / 60 / 60) % 24) > 10
+            ? parseInt(timer / 24 / 60 / 60)
+            : "0" + parseInt(timer / 24 / 60 / 60);
+        var myMinute =
+          parseInt((timer / 60) % 60) > 10
+            ? parseInt(timer / 24 / 60 / 60)
+            : "0" + parseInt(timer / 24 / 60 / 60);
+        var mySecond =
+          parseInt(timer % 60) > 10
+            ? parseInt(timer / 24 / 60 / 60)
+            : "0" + parseInt(timer / 24 / 60 / 60);
+        return (
+          "还剩" +
+          myDay +
+          "天" +
+          myHour +
+          "时" +
+          myMinute +
+          "分" +
+          mySecond +
+          "秒"
+        );
+      }
+      console.log(countDown("2022-3-8 0:0:0"));
+    </script>
+  </head>
+  <body>
+    <h5>
+      Date实例时用来处理日期和时间的&nbsp;Date对象基于1970年1月1日（世界标准时间）起的毫秒
+    </h5>
+    <h5>
+      注意：只能通过调用Date构造函数来实例化日期对象，以常规函数调用它（即不加new操作符）将会返回一个字符串，而不是一个日期对象，另外，不像其他js类型，Date对象没有字面量格式
+    </h5>
+    <h5>如果括号里面有时间，就返回参数里面的时间。</h5>
+    <h5>
+      Date对象基于1970年1月1日（世界标准时间）起的毫秒数，我们经常利用总的毫秒数来计算时间，因为它更精确
+    </h5>
+  </body>
+</html>

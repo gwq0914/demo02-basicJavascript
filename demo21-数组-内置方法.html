@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //创建数组的两种方式
+      //1.利用数组字面量
+      var arr = [1, 2, 3];
+      console.log(arr[0]);
+
+      //2.利用new Array()
+      var arr1 = new Array(); //创建了一个空的数组
+      var arr2 = new Array(2); //创建了一个长度为2，元素为空的数组
+      var arr3 = new Array(2, 3); //创建了一个数组元素为2，3的数组
+      console.log(arr1);
+      console.log(arr2);
+      console.log(arr3);
+
+      // 翻转数组
+      function reverseArr(arr) {
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          newArr[newArr.length] = arr[i];
+        }
+        return newArr;
+      }
+      arr4 = reverseArr([15, 25, 45, 65, 78, 98, 32, 12]);
+      var str = "";
+      for (k in arr4) {
+        str += arr4[k] + " ";
+      }
+      console.log(str);
+
+      //翻转数组
+      var arr5 = [15, 7, 25, 45, 65, 78, 98, 32, 12];
+      arr5.reverse();
+      console.log(arr5);
+
+      //数组排序
+      arr5.sort();
+      console.log(arr5);
+      //这个排序是：按照最高位数相比较之后才比较次高位的
+      //sort([compareFunction])
+      arr5.sort(function (a, b) {
+        return a - b; //升序
+      });
+      console.log(arr5);
+
+      //检测是否为数组
+      //1.instanceof 实例 用来检测是否为数组
+      var obj = {};
+      console.log(arr instanceof Array);
+      console.log(obj instanceof Array);
+      console.log(obj instanceof Object);
+      //2.Array.isArray(参数)  h5新增的方法
+      console.log(Array.isArray(arr));
+      console.log(Array.isArray(obj));
+
+      //添加删除数组元素的方法
+      //1.push() 在数组的末尾 添加一个或多个元素 push 推
+      arr.push(4, "pink");
+      console.log(arr);
+      //push 是可以给数组追加新的元素
+      //push() 参数直接写 数组元素就可以了
+      //push返回的结果是 新数组的长度
+      //原数组发生变化
+
+      //2.unshift() 在数组的前面 添加一个或多个元素
+      arr.unshift("red");
+      console.log(arr);
+      //unshift 是可以给数组开头添加新的元素
+      //unshift() 参数直接写 数组元素就可以了
+      //unshift返回的结果是 新数组的长度
+      //原数组发生变化
+
+      //3.pop() 在数组的末尾 删除一个
+      arr.pop();
+      console.log();
+      //pop是可以给数组删除最后一个元素
+      //pop() 没有参数
+      //pop返回的结果是 删除的元素
+      //原数组发生变化
+
+      arr.shift();
+      console.log(arr);
+      //4.shift() 删除数组的第一个元素
+      //shift() 没有参数
+      //shift()返回的结果是 删除的元素
+      //原数组发生变化
+
+      //案例：筛选数组
+      //有一个包含工资的数组[1500,1200,2100,1800],要求把数组中工资超过2000的删除，剩余的放在新数组里面
+      function DelSalary(arr, num) {
+        var newSalary = new Array();
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] < num) {
+            newSalary.push(arr[i]);
+            //newSalary[newSalary.length] = arr[i];
+          }
+        }
+        return newSalary;
+      }
+      console.log(DelSalary([1500, 1200, 2100, 1800], 2000));
+
+      //获取数组元素索引方法
+      //indexOf();数组中查找给定元素的第一个索引 第一个参数是查找的数组元素，第二个参数是从索引号开始查找。存在则返回查找到第一个索引号，不存在则返回-1
+      //lastIndexOf();数组中查找给定元素的倒数第一个索引。存在则返回查找到倒数第一个索引号，不存在则返回-1。
+
+      //案例：数组去重
+      //题面：有一个数组['c','a','z','a','x','a','x','c','b'],要求出去数组中重复的元素
+
+      var arr6 = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
+      function DelRepeat(arr) {
+        var newArr = new Array();
+        for (var i = 0; i < arr.length; i++) {
+          if (arr.indexOf(arr[i], i + 1) != -1) {
+            continue;
+          }
+          newArr.push(arr[i]);
+        }
+        return newArr;
+      }
+      console.log(DelRepeat(arr6));
+
+      //方法二：
+      function unique(arr) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (newArr.indexOf(arr[i]) === -1) {
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr;
+      }
+      console.log(unique(arr6));
+
+      //数组转为字符串
+      //1.toString()
+      //2.join(分隔符)
+      arr7 = ["red", "blue", "green"];
+      console.log(arr7.join(","));
+    </script>
+  </head>
+  <body></body>
+</html>

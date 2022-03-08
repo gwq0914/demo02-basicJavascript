@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+      //基本包装类型：把简单数据类型包装成了复杂包装类型
+      var str = "andy";
+      console.log(str.length);
+      //对象才有属性和方法 复杂数据类型才有属性和方法
+      //简单数据类型为什么有length属性呢？
+      //基本数据类型：
+      //1.把简单数据类型包装为复杂数据类型
+      var temp = new String("andy");
+      //2.把临时变量的值给str
+      str = temp;
+      //3.销毁这个临时变量
+      temp = null;
+      //字符串对象 根据字符返回位置
+      var str = "改革春风吹满地，春天来了";
+      console.log(str.indexOf("春"));
+      console.log(str.indexOf("春", 3));
+
+      
+      //案例：查找字符串'oabcoefoxyozzopp'中所有o出现的位置以及次数
+      //方法1：
+      function charSeek1(arr) {
+        var order = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] == "o") {
+            order.push(i);
+          }
+        }
+        return order;
+      }
+      chars1 = charSeek1("oabcoefoxyozzopp");
+      console.log(
+        '字符串中"abcoefoxyozzopp"中的"o"的位置是：' +
+          chars1.join(",") +
+          " 次数是：" +
+          chars1.length
+      );
+      //方法二：
+      function charSeek2(str) {
+        var index = str.indexOf("o");
+        var indexArr = [];
+        while (index !== -1) {
+          indexArr.push(index);
+          index = str.indexOf("o", index + 1);
+        }
+        return indexArr;
+      }
+      chars2 = charSeek2("oabcoefoxyozzopp");
+      console.log(
+        '字符串中"abcoefoxyozzopp"中的"o"的位置是：' +
+          chars2.join(",") +
+          " 次数是：" +
+          chars2.length
+      );
+
+      //根据位置返回字符
+      //1.charAt(index) 返回指定位置的字符
+      //2.charCodeAt(index) 获取指定位置处的ASCII码
+      //3.str[index] 获取指定位置处字符
+      //遍历所有的字符
+      /*
+      function charAtS(arr) {
+        for (var i = 0; i < arr.length; i++) {
+          console.log(arr.charAt(i));
+        }
+      }
+      charAtS("oabcoefoxyozzopp");
+      
+
+      //判断一个字符串'oabcoefoxyozzopp'中出席那次数最多的字符，并统计其次数。
+      function countChar(str) {
+        var order = {};
+        for (var i = 0; i < str.length; i++) {
+          //var chars = str[i];
+          if (order[str[i]]) {
+            order[str[i]]++;
+          } else {
+            order[str[i]] = 1;
+          }
+        }
+        // return order;
+        countCharMax(order);
+      }
+      function countCharMax(obj) {
+        var max = 0,
+          ch;
+        for (k in obj) {
+          if (max < obj[k]) {
+            max = obj[k];
+            ch = k;
+          }
+        }
+        console.log("出现次数最多的是：" + ch + ",有" + max + "次");
+      }
+      //   countChar("oabcoefoxyozzopp");
+      console.log(countChar("oabcoefoxyozzopp"));
+
+      //concat(str1,str2,...)方法用于连接两个或多个字符串，拼接字符串
+      //substr(start,length)从start位置开始，length截取的个数
+      //slice(start,end)从start位置开始，截取到end位置，end取不到
+      //substring(start,end)从start位置开始，end取不到 不接受负值
+      //str.split(',');字符转换为数组 
+      //str.toUpperCase();转换为大写
+      //str.toLowerCase();转换为小写
+*/
+      //替换字符
+      //str.replace('a','b'); 将第一个a替换成b
+      //案例：将"oabcoefoxyozzopp"中的o转变为*
+      function replaceChar(str) {
+        while (str.indexOf("o") != -1) {
+          str = str.replace("o", "*");
+        }
+        return str;
+      }
+      console.log(replaceChar("oabcoefoxyozzopp"));
+    </script>
+  </head>
+  <body>
+    <h5>基本包装类型</h5>
+    <h5>
+      为了方便操作基本数据类型，js提供了三个特殊的引用类型：String、Number和Boolean。基本包装类型就是把简单数据类型包装称为复杂数据类型，这样基本数据类型就有了属性和方法。
+    </h5>
+    <h3>字符串的不可变</h3>
+    <h5>
+      字符串的不可变指的是里面的值不可变，虽然看上去是可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间
+    </h5>
+    <h5>注意：因为我们字符串的不可变 所以不要大量的拼接字符串</h5>
+  </body>
+</html>

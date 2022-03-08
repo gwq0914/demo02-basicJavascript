@@ -27,12 +27,15 @@
         }
         return newArr;
       }
-      arr4 = reverseArr([15, 25, 45, 65, 78, 98, 32, 12]);
-      var str = "";
-      for (k in arr4) {
-        str += arr4[k] + " ";
+      //arr4 = reverseArr([15, 25, 45, 65, 78, 98, 32, 12]);
+      function printStr(arr) {
+        var str = "";
+        for (k in arr) {
+          str += arr[k] + " ";
+        }
+        console.log(str);
       }
-      console.log(str);
+      console.log(printStr(reverseArr([15, 25, 45, 65, 78, 98, 32, 12])));
 
       //翻转数组
       var arr5 = [15, 7, 25, 45, 65, 78, 98, 32, 12];
